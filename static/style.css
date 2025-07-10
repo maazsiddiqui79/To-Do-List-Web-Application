@@ -2,6 +2,7 @@
 * {
   box-sizing: border-box;
 }
+table-container
 
 /* Branding */
 .navbar-brand {
@@ -18,8 +19,7 @@
 
 /* Container for sections */
 .container {
-    margin-bottom: 5rem;
-    margin-top: 2rem;
+    margin: 5rem;
     padding-bottom: 5rem;
     padding-top: 5px;
   background-color: rgba(172, 172, 172, 0.205);
@@ -87,12 +87,14 @@
 @media screen and (max-width: 728px) {
   .main-wrapper,
   .container,
-  .table-container {
+  .table-container,
+  .table-responsive {
     width: 100% !important;
     margin: 0 !important;
     padding-left: 10px;
     padding-right: 10px;
     box-shadow: none;
+    margin-top: 1rem;
   }
 }
 
