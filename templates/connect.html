@@ -1,17 +1,17 @@
-{% extends 'base.html' %} {% block title %}My Profile{% endblock %} {% block
-body %}
-<!-- Todo Form -->
+{% extends 'base.html' %}
+{% block title %}My Profile{% endblock %}
+
+{% block body %}
 <div class="container">
-  <div class="wrapper">
+  <div class="wrapper text-center my-4">
     <img
       src="{{ url_for('static', filename='dtom.jpeg') }}"
       alt="MY IMAGE"
-      class="my-img"
+      class="my-img rounded-circle"
+      style="width: 200px; height: 200px; object-fit: cover;"
     />
   </div>
-  <h1 class="wrapper">Maaz Siddiqui</h1>
-
-  <h4>About</h4>
+  <h1 class="wrapper text-center my-4">Maaz Siddiqui</h1>
 
   <div class="about-me-section">
     <p>
@@ -29,10 +29,8 @@ body %}
       including
       <strong>Python, C++, and Java</strong>, and have honed my skills in areas
       such as
-      <strong
-        >Object-Oriented Programming, Data Structures & Algorithms,
-        Microprocessors (8086), Digital Electronics, Computer Networking</strong
-      >, and <strong>Database Management Systems</strong>. I’ve also explored
+      <strong>Object-Oriented Programming, Data Structures &amp; Algorithms,
+        Microprocessors (8086), Digital Electronics, Computer Networking</strong>, and <strong>Database Management Systems</strong>. I’ve also explored
       web development frameworks like <strong>Flask</strong> and frontend
       technologies such as <strong>HTML, CSS</strong>, and
       <strong>JavaScript</strong>, which have allowed me to build full-stack
@@ -49,10 +47,9 @@ body %}
     </p>
   </div>
 
-  <br /><br />
+  <h4>About</h4>
   <h4>Projects</h4>
-  <br />
-  <div class="container container2">
+  <div class="container container2 mx-6">
     <h2>To-Do List Application</h2>
     <p>
       A <em>dynamic</em> and <em>responsive</em>
@@ -62,94 +59,66 @@ body %}
       allowing users to <strong>create</strong>, <strong>update</strong>, and
       <strong>delete</strong> tasks. Key features include
       <strong>task prioritization</strong> and a
-      <em>clean, intuitive design</em>. <br /><br />
+      <em>clean, intuitive design</em>. <br><br>
       <strong>Technologies Used:</strong>
-      <em
-        >HTML, CSS, JavaScript, Bootstrap, Python, FastAPI, GitHub, VS Code</em
-      >
+      <em>HTML, CSS, JavaScript, Bootstrap, Python, FastAPI, GitHub, VS Code</em>
     </p>
 
-    <a
-      href="https://github.com/maazsiddiqui79/100-Days-Python-Project"
-      target="_blank"
-      ><button type="button" class="btn btn-dark btn-outline-light mx-2 px-4">
+    <a href="https://github.com/maazsiddiqui79/100-Days-Python-Project" target="_blank"><button type="button" class="btn btn-dark btn-outline-light mx-2 px-4">
         GitHub
-      </button></a
-    >
+      </button></a>
   </div>
+  <h2 class="wrapper text-center">Connect with Me</h2>
 
-  <h3 class="wrapper">Connect with Me</h3>
-  <div class="wrapper">
-    <!-- GitHub -->
-    <a
-      href="https://github.com/maazsiddiqui79/100-Days-Python-Project"
-      target="_blank"
-    >
-      <button type="button" class="btn btn-dark btn-outline-light mx-2 px-4">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
-          alt="GitHub Logo"
-          style="height: 30px"
-        />
-        GitHub
-      </button>
-    </a>
+<div class="wrapper d-flex flex-column flex-md-row justify-content-center align-items-center mb-3">
+  <a href="https://github.com/maazsiddiqui79/100-Days-Python-Project" target="_blank" class="m-2">
+    <button class="btn btn-dark btn-outline-light px-4 d-flex align-items-center">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="height: 25px;" class="mr-2" />
+      GitHub
+    </button>
+  </a>
+  <a href="https://www.instagram.com/siddiqui.maazzz/" target="_blank" class="m-2">
+    <button class="btn btn-dark btn-outline-light px-4 d-flex align-items-center">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="height: 25px;" class="mr-2" />
+      Instagram
+    </button>
+  </a>
+  <a href="https://www.linkedin.com/in/siddiqui-maazzz/" target="_blank" class="m-2">
+    <button class="btn btn-dark btn-outline-light px-4 d-flex align-items-center">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" style="height: 25px;" class="mr-2" />
+      LinkedIn
+    </button>
+  </a>
+  <a href="https://x.com/siddiquimaazzz" target="_blank" class="m-2">
+    <button class="btn btn-dark btn-outline-light px-4 d-flex align-items-center">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="X" style="height: 25px;" class="mr-2" />
+      X
+    </button>
+  </a>
+</div>
 
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/siddiqui.maazzz/" target="_blank">
-      <button type="button" class="btn btn-dark btn-outline-light mx-2 px-4">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-          alt="Instagram Logo"
-          style="height: 30px"
-        />
-        Instagram
-      </button>
-    </a>
+<div class="container text-center mt-4">
+  <h3 class="wrapper mb-4">Contact Me</h3>
 
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/siddiqui-maazzz/" target="_blank">
-      <button type="button" class="btn btn-dark btn-outline-light mx-2 px-4">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
-          alt="LinkedIn Logo"
-          style="height: 30px"
-        />
-        LinkedIn
-      </button>
-    </a>
-
-    <!-- X (Twitter) -->
-    <a href="https://x.com/siddiquimaazzz" target="_blank">
-      <button type="button" class="btn btn-dark btn-outline-light mx-2 px-4">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png"
-          alt="X Logo"
-          style="height: 30px"
-        />
-        X
-      </button>
-    </a>
-  </div>
-  <div class="container">
-    <h3 class="wrapper">Contact Me</h3>
-    <div class="wrapper">
+  <div class="row justify-content-center">
+    <div class="col-md-6 mb-3">
       <p>
         <strong>📞 Phone:</strong>
-        <a href="tel:+919999999999">+91-99999-99999</a>
+        <a href="tel:+919999999999" class="text-decoration-none">+91-99999-99999</a>
       </p>
       <p>
-        <strong> | 📧 Email:</strong>
-        <a href="mailto:maazsiddiqui123@gmail.com">siddiqui.maaz79@gmail.com</a>
+        <strong>📧 Email:</strong>
+        <a href="mailto:maazsiddiqui123@gmail.com" class="text-decoration-none">siddiqui.maaz79@gmail.com</a>
       </p>
     </div>
-    <div class="wrapper">
-      <p><strong>📍 Location:</strong> Mumbai, Maharashtra, India </p>
+
+    <div class="col-md-6 mb-3">
       <p>
-        <strong>| 💬 WhatsApp:</strong>
-        <a href="https://wa.me/918850281310" target="_blank"
-          >Chat on WhatsApp</a
-        >
+        <strong>📍 Location:</strong> Mumbai, Maharashtra, India
+      </p>
+      <p>
+        <strong>💬 WhatsApp:</strong>
+        <a href="https://wa.me/918850281310" target="_blank" class="text-decoration-none">Chat on WhatsApp</a>
       </p>
     </div>
   </div>
