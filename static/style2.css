@@ -1,0 +1,120 @@
+/* Navbar */
+.navbar-brand {
+    padding: 7px 20px;
+    border-radius: 15px;
+    background-color: rgb(113, 248, 203);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(172, 172, 172, 0.205);
+    margin-bottom: 0px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.footertext {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #333; /* Dark text */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Container */
+.container {
+    background-color: rgba(172, 172, 172, 0.205);
+    border-radius: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 20px;
+    box-shadow: 15px 15px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Card as Table Container */
+.table-container {
+    padding: 20px;
+    background-color: rgba(172, 172, 172, 0.205);
+    width: 100%;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 15px 15px 3px rgba(0, 0, 0, 0.6);
+    overflow-x: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons */
+.btn {
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: rgba(172, 172, 172, 0.205);
+    box-shadow: 3px 3px 1px rgba(0, 0,0.6);
+    transform: scale(1.01);
+}
+
+.addbt {
+    color: whitesmoke;
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+.addbt:hover {
+    background-color: rgba(172, 172, 172, 0.205);
+    box-shadow: 4px 4.5px 1px rgba(0, 0, 0.6);
+    transform: scale(1.01);
+    color: black;
+}
+
+/* Profile Image */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid rgba(172, 172, 172, 0.5);
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 15px;
+}
+
+.social-icon {
+    margin: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    text-decoration: center;
+    font-size: 16px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #333;
+}
+
+/* Card Text */
+.card-text {
+    color: #555;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .container {
+        padding: 15px;
+    }
+    .table-container {
+        width: 100%;
+        max-width: 100%;
+    }
+    .social-icon {
+        display: inline-block;
+        width: auto;
+        margin: 5px;
+    }
+}
