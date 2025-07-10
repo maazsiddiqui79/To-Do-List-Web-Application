@@ -1,56 +1,56 @@
 {% extends 'base.html' %} {% block title %}My Profile{% endblock %} {% block
-body %}
-<div class="container">
-  <div class="wrapper text-center my-4">
-    <img
+  body %}
+  <div class="container">
+    <div class="wrapper text-center my-4">
+      <img
       src="{{ url_for('static', filename='dtom.jpeg') }}"
       alt="MY IMAGE"
       class="my-img rounded-circle"
       style="width: 200px; height: 200px; object-fit: cover"
-    />
-  </div>
-  <h1 class="wrapper text-center my-4">Maaz Siddiqui</h1>
-
-  <div class="about-me-section">
-    <p>
-      Hello! I’m <strong>Maaz Siddiqui</strong>, a dedicated and
-      forward-thinking student of <strong>Computer Engineering</strong> with a
-      strong foundation in both software development and core engineering
-      principles. I’m deeply passionate about emerging technologies,
-      particularly <strong>Artificial Intelligence, Web Development</strong>,
-      and <strong>Automation</strong>, and I strive to integrate practical
-      solutions into every project I undertake.
-    </p>
-
-    <p>
-      Over the years, I have actively worked on various programming languages
-      including
-      <strong>Python, C++, and Java</strong>, and have honed my skills in areas
-      such as
-      <strong
+      />
+    </div>
+    <h1 class="wrapper text-center my-4">Maaz Siddiqui</h1>
+    
+    <div class="about-me-section">
+      <p>
+        Hello! I’m <strong>Maaz Siddiqui</strong>, a dedicated and
+        forward-thinking student of <strong>Computer Engineering</strong> with a
+        strong foundation in both software development and core engineering
+        principles. I’m deeply passionate about emerging technologies,
+        particularly <strong>Artificial Intelligence, Web Development</strong>,
+        and <strong>Automation</strong>, and I strive to integrate practical
+        solutions into every project I undertake.
+      </p>
+      
+      <p>
+        Over the years, I have actively worked on various programming languages
+        including
+        <strong>Python, C++, and Java</strong>, and have honed my skills in areas
+        such as
+        <strong
         >Object-Oriented Programming, Data Structures &amp; Algorithms,
         Microprocessors (8086), Digital Electronics, Computer Networking</strong
-      >, and <strong>Database Management Systems</strong>. I’ve also explored
-      web development frameworks like <strong>Flask</strong> and frontend
-      technologies such as <strong>HTML, CSS</strong>, and
-      <strong>JavaScript</strong>, which have allowed me to build full-stack
-      applications from scratch.
-    </p>
-
-    <p>
-      I strongly believe in <em>learning by doing</em>. My academic projects
-      reflect this mindset — from designing a
-      <strong>WhatsApp interface in Figma</strong>, to developing
-      <strong>Python-based real-world applications</strong> involving
-      <strong>JSON, APIs, GUI with Tkinter</strong>, and even web scraping using
-      <strong>Beautiful Soup</strong> and <strong>Selenium</strong>.
-    </p>
+        >, and <strong>Database Management Systems</strong>. I’ve also explored
+        web development frameworks like <strong>Flask</strong> and frontend
+        technologies such as <strong>HTML, CSS</strong>, and
+        <strong>JavaScript</strong>, which have allowed me to build full-stack
+        applications from scratch.
+      </p>
+      
+      <p>
+        I strongly believe in <em>learning by doing</em>. My academic projects
+        reflect this mindset — from designing a
+        <strong>WhatsApp interface in Figma</strong>, to developing
+        <strong>Python-based real-world applications</strong> involving
+        <strong>JSON, APIs, GUI with Tkinter</strong>, and even web scraping using
+        <strong>Beautiful Soup</strong> and <strong>Selenium</strong>.
+      </p>
+    </div>
   </div>
 
-  <h4>About</h4>
-  <h4>Projects</h4>
-  <div class="container container2 mx-6">
-    <h2>To-Do List Application</h2>
+  <div class="container">
+    <h2 class="wrapper text-center my-4">About Projects</h2>
+    <h4>To-Do List Application</h4>
     <p>
       A <em>dynamic</em> and <em>responsive</em>
       <strong>To-Do List Application</strong> built to help users manage tasks
@@ -69,11 +69,12 @@ body %}
     <a
       href="https://github.com/maazsiddiqui79/100-Days-Python-Project"
       target="_blank"
-      ><button type="button" class="btn btn-dark btn-outline-light mx-2 px-4">
+      ><button type="button" class="btn btn-dark btn-outline-light px-4">
         GitHub
       </button></a
     >
   </div>
+  <br><br>
   <h2 class="wrapper text-center">Connect with Me</h2>
 
   <div
@@ -180,6 +181,5 @@ body %}
       </div>
     </div>
   </div>
-</div>
 
 {% endblock %}
