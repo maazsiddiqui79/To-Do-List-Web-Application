@@ -80,7 +80,7 @@ def deldone(id):
 def clear():
     db.drop_all()
     db.create_all()
-    return redirect('/')
+    return redirect(url_for('home'))
 
 @app.route('/Profile')
 def maaz():
