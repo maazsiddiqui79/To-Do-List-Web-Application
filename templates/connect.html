@@ -1,14 +1,12 @@
-{% extends 'base.html' %}
-{% block title %}My Profile{% endblock %}
-
-{% block body %}
+{% extends 'base.html' %} {% block title %}My Profile{% endblock %} {% block
+body %}
 <div class="container">
   <div class="wrapper text-center my-4">
     <img
       src="{{ url_for('static', filename='dtom.jpeg') }}"
       alt="MY IMAGE"
       class="my-img rounded-circle"
-      style="width: 200px; height: 200px; object-fit: cover;"
+      style="width: 200px; height: 200px; object-fit: cover"
     />
   </div>
   <h1 class="wrapper text-center my-4">Maaz Siddiqui</h1>
@@ -29,8 +27,10 @@
       including
       <strong>Python, C++, and Java</strong>, and have honed my skills in areas
       such as
-      <strong>Object-Oriented Programming, Data Structures &amp; Algorithms,
-        Microprocessors (8086), Digital Electronics, Computer Networking</strong>, and <strong>Database Management Systems</strong>. I’ve also explored
+      <strong
+        >Object-Oriented Programming, Data Structures &amp; Algorithms,
+        Microprocessors (8086), Digital Electronics, Computer Networking</strong
+      >, and <strong>Database Management Systems</strong>. I’ve also explored
       web development frameworks like <strong>Flask</strong> and frontend
       technologies such as <strong>HTML, CSS</strong>, and
       <strong>JavaScript</strong>, which have allowed me to build full-stack
@@ -59,67 +59,125 @@
       allowing users to <strong>create</strong>, <strong>update</strong>, and
       <strong>delete</strong> tasks. Key features include
       <strong>task prioritization</strong> and a
-      <em>clean, intuitive design</em>. <br><br>
+      <em>clean, intuitive design</em>. <br /><br />
       <strong>Technologies Used:</strong>
-      <em>HTML, CSS, JavaScript, Bootstrap, Python, FastAPI, GitHub, VS Code</em>
+      <em
+        >HTML, CSS, JavaScript, Bootstrap, Python, FastAPI, GitHub, VS Code</em
+      >
     </p>
 
-    <a href="https://github.com/maazsiddiqui79/100-Days-Python-Project" target="_blank"><button type="button" class="btn btn-dark btn-outline-light mx-2 px-4">
+    <a
+      href="https://github.com/maazsiddiqui79/100-Days-Python-Project"
+      target="_blank"
+      ><button type="button" class="btn btn-dark btn-outline-light mx-2 px-4">
         GitHub
-      </button></a>
+      </button></a
+    >
   </div>
   <h2 class="wrapper text-center">Connect with Me</h2>
 
-<div class="wrapper d-flex flex-column flex-md-row justify-content-center align-items-center mb-3">
-  <a href="https://github.com/maazsiddiqui79/100-Days-Python-Project" target="_blank" class="m-2">
-    <button class="btn btn-dark btn-outline-light px-4 d-flex align-items-center">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="height: 25px;" class="mr-2" />
-      GitHub
-    </button>
-  </a>
-  <a href="https://www.instagram.com/siddiqui.maazzz/" target="_blank" class="m-2">
-    <button class="btn btn-dark btn-outline-light px-4 d-flex align-items-center">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="height: 25px;" class="mr-2" />
-      Instagram
-    </button>
-  </a>
-  <a href="https://www.linkedin.com/in/siddiqui-maazzz/" target="_blank" class="m-2">
-    <button class="btn btn-dark btn-outline-light px-4 d-flex align-items-center">
-      <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" style="height: 25px;" class="mr-2" />
-      LinkedIn
-    </button>
-  </a>
-  <a href="https://x.com/siddiquimaazzz" target="_blank" class="m-2">
-    <button class="btn btn-dark btn-outline-light px-4 d-flex align-items-center">
-      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="X" style="height: 25px;" class="mr-2" />
-      X
-    </button>
-  </a>
-</div>
+  <div
+    class="wrapper d-flex flex-column flex-md-row justify-content-center align-items-center mb-3"
+  >
+    <a
+      href="https://github.com/maazsiddiqui79/100-Days-Python-Project"
+      target="_blank"
+      class="m-2"
+    >
+      <button
+        class="btn btn-dark btn-outline-light px-4 d-flex align-items-center"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+          alt="GitHub"
+          style="height: 25px"
+          class="mr-2"
+        />
+        GitHub
+      </button>
+    </a>
+    <a
+      href="https://www.instagram.com/siddiqui.maazzz/"
+      target="_blank"
+      class="m-2"
+    >
+      <button
+        class="btn btn-dark btn-outline-light px-4 d-flex align-items-center"
+      >
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+          alt="Instagram"
+          style="height: 25px"
+          class="mr-2"
+        />
+        Instagram
+      </button>
+    </a>
+    <a
+      href="https://www.linkedin.com/in/siddiqui-maazzz/"
+      target="_blank"
+      class="m-2"
+    >
+      <button
+        class="btn btn-dark btn-outline-light px-4 d-flex align-items-center"
+      >
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
+          alt="LinkedIn"
+          style="height: 25px"
+          class="mr-2"
+        />
+        LinkedIn
+      </button>
+    </a>
+    <a href="https://x.com/siddiquimaazzz" target="_blank" class="m-2">
+      <button
+        class="btn btn-dark btn-outline-light px-4 d-flex align-items-center"
+      >
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png"
+          alt="X"
+          style="height: 25px"
+          class="mr-2"
+        />
+        X
+      </button>
+    </a>
+  </div>
 
-<div class="container text-center mt-4">
-  <h3 class="wrapper mb-4">Contact Me</h3>
+  <div class="container text-center mt-4">
+    <h3 class="wrapper mb-4">Contact Me</h3>
 
-  <div class="row justify-content-center">
-    <div class="col-md-6 mb-3">
-      <p>
-        <strong>📞 Phone:</strong>
-        <a href="tel:+919999999999" class="text-decoration-none">+91-99999-99999</a>
-      </p>
-      <p>
-        <strong>📧 Email:</strong>
-        <a href="mailto:maazsiddiqui123@gmail.com" class="text-decoration-none">siddiqui.maaz79@gmail.com</a>
-      </p>
-    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6 mb-3">
+        <p>
+          <strong>📞 Phone:</strong>
+          <a href="tel:+919999999999" class="text-decoration-none"
+            >+91-99999-99999</a
+          >
+        </p>
+        <p>
+          <strong>📧 Email:</strong>
+          <a
+            href="mailto:maazsiddiqui123@gmail.com"
+            class="text-decoration-none"
+            >siddiqui.maaz79@gmail.com</a
+          >
+        </p>
+      </div>
 
-    <div class="col-md-6 mb-3">
-      <p>
-        <strong>📍 Location:</strong> Mumbai, Maharashtra, India
-      </p>
-      <p>
-        <strong>💬 WhatsApp:</strong>
-        <a href="https://wa.me/918850281310" target="_blank" class="text-decoration-none">Chat on WhatsApp</a>
-      </p>
+      <div class="col-md-6 mb-3">
+        <p><strong>📍 Location:</strong> Mumbai, Maharashtra, India</p>
+        <p>
+          <strong>💬 WhatsApp:</strong>
+          <a
+            href="https://wa.me/918850281310"
+            target="_blank"
+            class="text-decoration-none"
+            >Chat on WhatsApp</a
+          >
+        </p>
+      </div>
     </div>
   </div>
 </div>
