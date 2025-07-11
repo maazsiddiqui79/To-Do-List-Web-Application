@@ -9,6 +9,9 @@ table-container
   font-size: 1.1rem;
   border-radius: 10px;
   background-color: rgb(0 3 255 / 32%);
+  padding: 10px;
+  padding-left: 13px;
+  padding-right: 13px;
 }
 
 /* Outer layout wrapper (optional but useful) */
@@ -20,9 +23,9 @@ table-container
 
 /* Container for sections */
 .container {
-    margin: 5rem;
-    padding-bottom: 5rem;
-    padding-top: 5px;
+  margin: 5rem;
+  padding-bottom: 5rem;
+  padding-top: 5px;
   background-color: rgba(172, 172, 172, 0.205);
   border-radius: 15px;
   justify-content: center;
