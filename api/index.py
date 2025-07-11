@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import os
 
 app = Flask(__name__)
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///TODO_DATABASE.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -19,34 +21,6 @@ class DeletedTodo(db.Model):
     title = db.Column(db.String(200), nullable=False)
     content = db.Column(db.String(500), nullable=False)
     date = db.Column(db.DateTime, default=datetime.utcnow)
-# app.py
-from flask import Flask, render_template, request, redirect, url_for
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///TODO_DATABASE.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
-
-class Todo(db.Model):
-    sno = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(200), nullable=False)
-    content = db.Column(db.String(500), nullable=False)
-    date = db.Column(db.DateTime, default=datetime.utcnow)
-
-    def __repr__(self):
-        return f'{self.sno} - {self.title}'
-
-class DeletedTodo(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    sno = db.Column(db.Integer, nullable=False)
-    title = db.Column(db.String(200), nullable=False)
-    content = db.Column(db.String(500), nullable=False)
-    date = db.Column(db.DateTime, default=datetime.utcnow)
-
-    def __repr__(self):
-        return f'Deleted: {self.sno} - {self.title}'
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
@@ -111,7 +85,13 @@ def maaz():
 def docs():
     return render_template('docs.html')
 
-if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-    app.run()
+# Create database tables if they don't exist (runs once)
+with app.app_context():
+    
+    db.create_all()
+
+# IMPORTANT: expose app to Vercel
+# This must be at the bottom
+app = app
+
+app.run()
