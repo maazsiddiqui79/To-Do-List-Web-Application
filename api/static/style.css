@@ -26,6 +26,7 @@ table-container
 /* Container for sections */
 .container {
   padding :20px;
+  margin: 2.5rem;
   background-color: rgba(0, 21, 255, 0.205);
   justify-content: center;
   box-shadow: 15px 15px 3px rgba(0, 0, 0, 0.6);}
