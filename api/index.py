@@ -3,7 +3,10 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import os
 
-app = Flask(__name__)
+
+app = Flask(__name__, instance_path='/tmp')
+app.instance_path = '/tmp/instance'
+os.makedirs(app.instance_path, exist_ok=True)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///TODO_DATABASE.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
