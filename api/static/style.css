@@ -6,10 +6,11 @@ table-container
 
 /* Branding */
 .navbar-brand {
+  background-color: rgb(0 3 255 / 32%);
   font-size: 1.1rem;
   border-radius: 10px;
-  background-color: rgb(0 3 255 / 32%);
-  padding: 10px;
+  padding-bottom: 6px;
+  padding-top: 6px;
   padding-left: 13px;
   padding-right: 13px;
 }
@@ -37,7 +38,7 @@ table-container
 .container2 {
   margin: 5rem;
   padding-bottom: 5rem;
-  padding-top: 5px;
+  padding :10px;
   background-color: rgba(0, 21, 255, 0.205);
   border-radius: 15px;
   justify-content: center;
