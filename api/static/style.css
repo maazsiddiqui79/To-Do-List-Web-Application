@@ -25,8 +25,7 @@ table-container
 /* Container for sections */
 .container {
   margin: 5rem;
-  padding-bottom: 5rem;
-  padding-top: 5px;
+  padding-top: 35px;
   background-color: rgba(172, 172, 172, 0.205);
   border-radius: 15px;
   justify-content: center;
@@ -37,8 +36,8 @@ table-container
 
 .container2 {
   margin: 5rem;
-  padding-bottom: 5rem;
-  padding :10px;
+  padding-bottom: 15rem;
+  padding :20px;
   background-color: rgba(0, 21, 255, 0.205);
   border-radius: 15px;
   justify-content: center;
