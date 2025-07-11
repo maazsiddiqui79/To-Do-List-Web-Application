@@ -6,7 +6,8 @@ table-container
 
 /* Branding */
 .navbar-brand {
-  background-color: rgb(0 3 255 / 32%);
+  background-color: rgba(0, 21, 255, 0.205);
+  font-family: 'Times New Roman', Times, serif;
   font-size: 1.1rem;
   border-radius: 10px;
   padding-bottom: 6px;
@@ -24,25 +25,16 @@ table-container
 
 /* Container for sections */
 .container {
-  margin: 5rem;
-  padding-top: 35px;
-  background-color: rgba(172, 172, 172, 0.205);
-  border-radius: 15px;
-  justify-content: center;
-  box-shadow: 15px 15px 3px rgba(0, 0, 0, 0.6);
-}
-
-
-
-.container2 {
-  margin: 5rem;
-  padding-bottom: 15rem;
+margin: 5rem;
   padding :20px;
   background-color: rgba(0, 21, 255, 0.205);
   border-radius: 15px;
   justify-content: center;
-  box-shadow: 15px 15px 3px rgba(0, 0, 0, 0.6);
-}
+  box-shadow: 15px 15px 3px rgba(0, 0, 0, 0.6);}
+
+
+
+
 
 
 
