@@ -15,7 +15,7 @@ table-container
   padding-left: 13px;
   padding-right: 13px;
 }
-
+table-container
 /* Outer layout wrapper (optional but useful) */
 .main-wrapper {
   max-width: 1100px;
@@ -25,10 +25,8 @@ table-container
 
 /* Container for sections */
 .container {
-margin: 5rem;
   padding :20px;
   background-color: rgba(0, 21, 255, 0.205);
-  border-radius: 15px;
   justify-content: center;
   box-shadow: 15px 15px 3px rgba(0, 0, 0, 0.6);}
 
@@ -39,12 +37,13 @@ margin: 5rem;
 
 
 /* Table section */
+
 .table-container {
-  padding: 20px;
-  background-color: rgba(172, 172, 172, 0.205);
+  padding: 25px;
+  background-color: #ffffffc4; /* Light Gray */
   width: 100%;
   max-width: 90%;
-  border-radius: 10px;
+
   box-shadow: 15px 15px 3px rgba(0, 0, 0, 0.6);
   overflow-x: auto;
 }
@@ -59,7 +58,7 @@ margin: 5rem;
 .btn:hover {
   background-color: rgba(172, 172, 172, 0.205);
   box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.6);
-  transform: scale(1.01);
+  transform: scale(1.02);
 }
 
 /* Add button */
@@ -115,3 +114,19 @@ footer {
   text-align: center;
   padding: 1rem;
 }
+
+input[type="text"] {
+  border: none;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  outline: none;
+  background-color: transparent;
+  padding: 8px 10px;
+  font-size: 1rem;
+}
+
+input[type="text"]::placeholder {
+  color: #555;
+  opacity: 1; /* Makes sure placeholder is fully visible */
+}
+
