@@ -1,12 +1,15 @@
+# api/index.py  ⟵ this is the ONLY correct pattern
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import os
 
-
-app = Flask(__name__, instance_path='/tmp')
-app.instance_path = '/tmp/instance'
-os.makedirs(app.instance_path, exist_ok=True)
+app = Flask(
+    __name__,
+    template_folder='templates',
+    static_folder='static',
+    instance_path='/tmp'          # <— writable on Vercel
+)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///TODO_DATABASE.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -90,11 +93,12 @@ def docs():
 
 # Create database tables if they don't exist (runs once)
 with app.app_context():
-    
-    db.create_all()
+    db.create_all()               # runs once per cold‑start
 
-# IMPORTANT: expose app to Vercel
-# This must be at the bottom
-app = app
+# ── DO NOT call app.run() here ──
+# Expose the WSGI app for Vercel:
+# Vercel picks up the variable named “app” automatically.
 
-app.run()
+# Local development only
+if __name__ == '__main__':
+    app.run(debug=True)
