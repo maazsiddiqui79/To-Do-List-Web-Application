@@ -1,17 +1,18 @@
-# api/index.py  ⟵ this is the ONLY correct pattern
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-import os
 
 app = Flask(
     __name__,
     template_folder='templates',
     static_folder='static',
-    instance_path='/tmp'          # <— writable on Vercel
+    instance_path='/tmp'          # writable on Vercel
 )
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///TODO_DATABASE.db'
+
+# ✅ PostgreSQL SQLAlchemy connection string
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://go_todo_database_user:xcb0mg7xwZO3O5G6t8hwYy8O1XghwNGB@dpg-d1pan9mr433s73d6r1jg-a.oregon-postgres.render.com/go_todo_database'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 db = SQLAlchemy(app)
 
 class Todo(db.Model):
