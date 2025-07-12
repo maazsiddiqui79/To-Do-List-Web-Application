@@ -1,44 +1,37 @@
-{% extends 'base.html' %}
-{% block title %}ToDo Web App{% endblock %}
-
-
-{% block body %}
-
+{% extends 'base.html' %} {% block title %}ToDo Web App{% endblock %} {% block
+body %}
 
 <!-- Todo Form -->
-    <div class="container-02">
-      <form action="/edit/{{todo.sno}}" method="POST">
-        <h2>Update Todo</h2>
-        <div class="form-row">
-          <div czlass="form-group col-md-6">
-            <label for="title">Todo Title</label>
-            <input
-              required
-              type="text"
-              class="form-control"
-              name="title"
-              id="title"
-              placeholder="title"
-              value ={{todo.title}}
-              />
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="desc">Todo Description</label>
-            <input
-            autocomplete="off"
-            type="text"
-            required
-            class="form-control"
-            id="desc"
-            name="desc"
-            placeholder="Express your task"
-            value ={{todo.content}}
-          />
-        </div>
-        <button type="submit" class="btn btn-light mr-2">Add</button>
-      </form>
+<div class="container-02">
+  <form action="/edit/{{todo.sno}}" method="POST">
+    <h2>Update Todo</h2>
+    <div class="form-row">
+      <div czlass="form-group col-md-6">
+        <label for="title">Todo Title</label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          name="title"
+          id="title"
+          placeholder="title"
+          value="{{todo.title}}"
+        />
+      </div>
     </div>
-    
+    <div class="form-group">
+      <label for="desc">Todo Description</label>
+      <textarea
+        autocomplete="off"
+        required
+        class="form-control"
+        id="desc"
+        name="desc">
+        {{ todo.content }}
+        </textarea>
+    </div>
+    <button type="submit" class="btn btn-light mr-2">Add</button>
+  </form>
+</div>
 
-    {% endblock  %}
+{% endblock %}
