@@ -95,10 +95,6 @@ def docs():
 with app.app_context():
     db.create_all()               # runs once per cold‑start
 
-# ── DO NOT call app.run() here ──
-# Expose the WSGI app for Vercel:
-# Vercel picks up the variable named “app” automatically.
-
 # Local development only
 if __name__ == '__main__':
     app.run(debug=True)
