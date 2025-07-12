@@ -10,7 +10,7 @@ app = Flask(
     static_folder='static',
     instance_path='/tmp'          # <— writable on Vercel
 )
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://go_todo_database_user:xcb0mg7xwZO3O5G6t8hwYy8O1XghwNGB@dpg-d1pan9mr433s73d6r1jg-a:5432/TODO_DATABASE'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///TODO_DATABASE.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
