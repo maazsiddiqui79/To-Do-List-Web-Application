@@ -5,8 +5,11 @@
 table-container
 
 /* Branding */
-.navbar-brand {
+.navbar-brand:hover {
   transform: scale(1.02);
+  background-color: rgba(11, 16, 71, 0.205);
+}
+  .navbar-brand {
   background-color: rgba(0, 21, 255, 0.205);
   font-family: 'Times New Roman', Times, serif;
   font-size: 1.1rem;
