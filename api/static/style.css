@@ -15,10 +15,12 @@ table-container
   padding-left: 13px;
   padding-right: 13px;
 }
+
 .navbar-brand:hover {
   transform: scale(1.02);
   background-color: rgba(11, 16, 71, 0.205);
 }
+
 table-container
 /* Outer layout wrapper (optional but useful) */
 .main-wrapper {
