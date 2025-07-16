@@ -19,16 +19,14 @@ class Todo(db.Model):
     sno = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
     content = db.Column(db.String(500), nullable=False)
-    year = str(datetime.utcnow()).split('-')[0]
-    date = db.Column(db.DateTime, default=year)
+    date = db.Column(db.DateTime, default=datetime.utcnow)
 
 class DeletedTodo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     sno = db.Column(db.Integer, nullable=False)
     title = db.Column(db.String(200), nullable=False)
     content = db.Column(db.String(500), nullable=False)
-    year = str(datetime.utcnow()).split('-')[0]
-    date = db.Column(db.DateTime, default=year)
+    date = db.Column(db.DateTime, default=datetime.utcnow)
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
