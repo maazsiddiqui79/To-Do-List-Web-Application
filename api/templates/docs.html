@@ -1,0 +1,73 @@
+{% extends "base.html" %} {% block title %}ToDo App Guide{% endblock %} {% block
+body %}
+<div class="container mt-4">
+  <h2 class="text-center mb-4">📘 How to Use the ToDo App</h2>
+  <div class="table-container">
+    <ul>
+      <li>
+        <strong>Open the App:</strong> Navigate to the Home page from the
+        Navbar.
+      </li>
+      <li>
+        <strong>Add a Task:</strong> Use the input field and "Add" button to
+        enter a new task.
+      </li>
+      <li>
+        <strong>View Tasks:</strong> All tasks are displayed in a neat table
+        format.
+      </li>
+      <li>
+        <strong>Edit task:</strong> Use the edit action button to edit tasks.
+      </li>
+      <li>
+        <strong>Mark Complete:</strong> Use the done action button to mark tasks
+        as done.
+      </li>
+      <li>
+        <strong>Delete Task:</strong> Use the delete/trash button to remove any
+        task.
+      </li>
+      <li>
+        <strong>Clear All:</strong> Click “Clear all Task” in the Navbar to
+        remove every task.
+      </li>
+      <li>
+        <strong>Check Profile:</strong> Navigate to the “Profile” page to view
+        your info (if implemented).
+      </li>
+    </ul>
+  </div>
+
+  <br><br>
+  <div class="wrapper">
+    <img
+    src="{{ url_for('static', filename='Task-Title.png') }}"
+    alt="ToDo Example"
+    width="800px"
+    class="img-fluid rounded shadow"
+    />
+  </div>
+  <br>
+  <div class="wrapper">
+    <img
+    src="{{ url_for('static', filename='Complete-Button.png') }}"
+    width="800px"
+    alt="ToDo Example"
+    class="img-fluid rounded shadow"
+    />
+  </div>
+
+  <div class="container2 mt-4">
+    <p class="lead">
+      The ToDo App is designed for simplicity and productivity. Whether you're a
+      student, a professional, or just someone who likes staying organized, this
+      app helps you manage tasks quickly and efficiently.
+    </p>
+    <p>
+      Built using <strong>Flask</strong>, <strong>Bootstrap 5.3</strong>, and
+      custom <strong>CSS</strong>, it provides a clean, responsive UI that works
+      on all devices.
+    </p>
+  </div>
+</div>
+{% endblock %}
