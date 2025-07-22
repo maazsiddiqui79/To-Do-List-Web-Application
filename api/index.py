@@ -59,7 +59,7 @@ def done(id):
 @app.route('/edit/<int:id>', methods=['POST', 'GET'])
 def edit(id):
     if request.method == 'POST':
-        title = request.form['title']
+        title = request.form['title'] 
         desc = request.form['desc']
         user_to_update = Todo.query.filter_by(sno=id).first()
         user_to_update.title = title
