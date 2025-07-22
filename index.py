@@ -19,7 +19,7 @@ app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 db = SQLAlchemy(app)
 
 class USER_DATABASE(db.Model,UserMixin):
-    __tablename__ = 'User Database'
+    __tablename__ = 'User_Database'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(200), nullable=False)
     email = db.Column(db.String(500), unique=True)
@@ -34,7 +34,7 @@ class Todo(db.Model,UserMixin):
     user_email = db.Column(db.String(200), nullable=False)
 
 class DeletedTodo(db.Model,UserMixin):
-    __tablename__ = ' Deleted Todo'
+    __tablename__ = ' Deleted_Todo'
     id = db.Column(db.Integer, primary_key=True)
     sno = db.Column(db.Integer, nullable=False)
     title = db.Column(db.String(200), nullable=False)
@@ -114,11 +114,11 @@ def deldone(id):
         del_all_todo = DeletedTodo.query.all()
         return render_template('index.html', all_todo=all_todo, deltodo=del_all_todo,current_user=current_user.email,logged_in = current_user.is_authenticated)
 
-@app.route('/clear', methods=['POST', 'GET'])
-def clear():
-    db.drop_all()
-    db.create_all()
-    return redirect(url_for('home',logged_in = current_user.is_authenticated))
+# @app.route('/clear', methods=['POST', 'GET'])
+# def clear():
+#     db.drop_all()
+#     db.create_all()
+#     return redirect(url_for('home',logged_in = current_user.is_authenticated))
 
 @app.route('/Profile')
 def maaz():
