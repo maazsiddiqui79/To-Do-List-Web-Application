@@ -18,10 +18,9 @@ table-container
   padding :20px;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
-  background-color: rgba(0, 21, 255, 0.205);
+  background-color: rgba(172, 172, 172, 0.135);
   justify-content: center;
-  
-  box-shadow: 15px 15px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: 5px 15px 38px rgba(0, 0, 0, 0.509);
 }
   
   .container-02 {
