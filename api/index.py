@@ -11,6 +11,7 @@ app = Flask(
 
 # ✅ PostgreSQL SQLAlchemy connection string
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://go_todo_database_user:xcb0mg7xwZO3O5G6t8hwYy8O1XghwNGB@dpg-d1pan9mr433s73d6r1jg-a.oregon-postgres.render.com/go_todo_database'
+app.secret_key = 'your-secret-key'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -28,12 +29,18 @@ class DeletedTodo(db.Model):
     title = db.Column(db.String(200), nullable=False)
     content = db.Column(db.String(500), nullable=False)
     date = db.Column(db.DateTime, default=datetime.utcnow)
+    
+    
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return f"Error: {str(e)}", 500
+
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
     if request.method == 'POST':
-        title = request.form['title']
-        desc = request.form['desc']
+        title = request.form.get('title')
+        desc = request.form.get('desc')
         if title and desc:
             to_do = Todo(title=title, content=desc)
             db.session.add(to_do)
