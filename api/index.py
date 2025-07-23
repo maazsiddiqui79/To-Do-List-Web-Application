@@ -19,7 +19,8 @@ class Todo(db.Model):
     sno = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
     content = db.Column(db.String(500), nullable=False)
-    date = db.Column(db.DateTime, default=datetime.utcnow)
+    date = db.Column(db.String, default=str(datetime.utcnow()).split(' ')[0])
+    priority = db.Column(db.String(10), default='Low', nullable=False)
 
 class DeletedTodo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -38,7 +39,10 @@ def home():
             db.session.add(to_do)
             db.session.commit()
             return redirect(url_for('home'))
+    priority_order = {"High": 1, "Medium": 2, "Low": 3}
     all_todo = Todo.query.all()
+    all_todo = sorted(all_todo, key=lambda x: priority_order.get(x.priority, 4))
+
     del_all_todo = DeletedTodo.query.all()
     return render_template('index.html', all_todo=all_todo, deltodo=del_all_todo)
 
@@ -81,6 +85,30 @@ def deldone(id):
 def clear():
     db.drop_all()
     db.create_all()
+    return redirect(url_for('home'))
+
+
+@app.route('/priority/<prior>/<int:id>')
+def priority(prior,id):
+    print('+-----------------------------+')
+    print(prior,id)
+    user = Todo.query.filter_by(sno=id).first()
+    if user:
+        if prior == 'High':
+            user.priority = 'High'
+            db.session.commit()
+            print('priority updated to high')
+            
+        elif prior == 'Medium':
+            user.priority = 'Medium'
+            db.session.commit()
+            print('priority updated to Medium')
+            
+        elif prior == 'Low':
+            user.priority = 'Low'
+            db.session.commit()
+            print('priority updated to Low')
+            
     return redirect(url_for('home'))
 
 @app.route('/Profile')
