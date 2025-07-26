@@ -126,10 +126,10 @@ def maaz():
 def docs():
     return render_template('docs.html')
 
-# Create database tables if they don't exist (runs once)
-with app.app_context():
-    db.create_all()               # runs once per cold‑start
 
 # Local development only
 if __name__ == '__main__':
+    # Create database tables if they don't exist (runs once)
+    with app.app_context():
+        db.create_all()               # runs once per cold‑start
     app.run(debug=True)
