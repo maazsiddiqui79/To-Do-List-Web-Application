@@ -10,7 +10,7 @@ app = Flask(
 )
 
 # ✅ PostgreSQL SQLAlchemy connection string
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://go_todo_task_db_user:z3YSJb1og6V5aDVXuJqv9Kgsn7VgBpTO@dpg-d20liqndiees739m4op0-a.oregon-postgres.render.com/go_todo_task_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg://maaz_sidd:26bgYVIRdA2P5mPUuE0L6BduGEs9ek3R@dpg-d28l1q7diees73f299kg-a:5432/go_todo_task_db_j0d4'
 app.secret_key = 'your-secret-key'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
