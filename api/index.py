@@ -99,6 +99,7 @@ def clear():
 def priority(prior,id):
     print('+-----------------------------+')
     print(prior,id)
+    # 
     user = Todo.query.filter_by(sno=id).first()
     if user:
         if prior == 'High':
