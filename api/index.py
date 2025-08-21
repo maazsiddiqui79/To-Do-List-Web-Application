@@ -1,24 +1,33 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-import os
 
 app = Flask(
     __name__,
     template_folder='templates',
-    static_folder='static',
-    instance_path='/tmp'          # writable on Vercel
+    static_folder='static'
 )
-# ✅ PostgreSQL SQLAlchemy connection string
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.instance_path, 'MY_DATA.db')
+# ✅ Choose DB based on environment
+if os.getenv("DATABASE_URL"):
+    # On Vercel → PostgreSQL
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
+else:
+    # Local development → SQLite in instance/
+    os.makedirs(app.instance_path, exist_ok=True)
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.instance_path, 'MY_DATA.db')
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg://maaz_sidd:26bgYVIRdA2P5mPUuE0L6BduGEs9ek3R@dpg-d28l1q7diees73f299kg-a:5432/go_todo_task_db_j0d4'
 app.secret_key = 'your-secret-key'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+# Ensure tables exist
+with app.app_context():
+    db.create_all()
+    
+    
 class Todo(db.Model):
     sno = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
@@ -134,6 +143,5 @@ def docs():
 # Local development only
 if __name__ == '__main__':
     # Create database tables if they don't exist (runs once)
-    with app.app_context():
-        db.create_all()               # runs once per cold‑start
+    
     app.run(debug=True)
