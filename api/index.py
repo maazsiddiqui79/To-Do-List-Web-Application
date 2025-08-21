@@ -14,9 +14,10 @@ if os.getenv("DATABASE_URL"):
     # On Vercel → PostgreSQL
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 else:
-    # Local development → SQLite in instance/
-    os.makedirs(app.instance_path, exist_ok=True)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.instance_path, 'MY_DATA.db')
+    # Local development → SQLite in /tmp/
+    db_dir = "/tmp/instance"
+    os.makedirs(db_dir, exist_ok=True)
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(db_dir, 'MY_DATA.db')
 
 app.secret_key = 'your-secret-key'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -111,7 +112,6 @@ def clear():
 def priority(prior,id):
     print('+-----------------------------+')
     print(prior,id)
-    # 
     user = Todo.query.filter_by(sno=id).first()
     if user:
         if prior == 'High':
@@ -142,6 +142,4 @@ def docs():
 
 # Local development only
 if __name__ == '__main__':
-    # Create database tables if they don't exist (runs once)
-    
     app.run(debug=True)
