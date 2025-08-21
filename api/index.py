@@ -27,13 +27,23 @@ db = SQLAlchemy(app)
 # Ensure tables exist
 with app.app_context():
     db.create_all()
-    
-    
+
+@app.before_request
+def ensure_tables():
+    """Make sure tables exist on every request (needed for ephemeral SQLite on Vercel)."""
+    db.create_all()
+
+# ✅ Only one error handler, declared once
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return f"Error: {str(e)}", 500
+
+
 class Todo(db.Model):
     sno = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
     content = db.Column(db.String(500), nullable=False)
-    date = db.Column(db.String, default=str(datetime.utcnow()).split(' ')[0])
+    date = db.Column(db.String, default=lambda: str(datetime.utcnow()).split(' ')[0])
     priority = db.Column(db.String(10), default='Low', nullable=False)
 
 class DeletedTodo(db.Model):
@@ -43,11 +53,6 @@ class DeletedTodo(db.Model):
     content = db.Column(db.String(500), nullable=False)
     date = db.Column(db.DateTime, default=datetime.utcnow)
     
-    
-@app.errorhandler(Exception)
-def handle_exception(e):
-    return f"Error: {str(e)}", 500
-
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
@@ -130,6 +135,7 @@ def priority(prior,id):
             print('priority updated to Low')
             
     return redirect(url_for('home'))
+
 
 @app.route('/Profile')
 def maaz():
