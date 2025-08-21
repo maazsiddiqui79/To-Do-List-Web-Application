@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import os
 
 app = Flask(
     __name__,
@@ -8,9 +9,9 @@ app = Flask(
     static_folder='static',
     instance_path='/tmp'          # writable on Vercel
 )
-
 # ✅ PostgreSQL SQLAlchemy connection string
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///MY_DATA.db'
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.instance_path, 'MY_DATA.db')
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg://maaz_sidd:26bgYVIRdA2P5mPUuE0L6BduGEs9ek3R@dpg-d28l1q7diees73f299kg-a:5432/go_todo_task_db_j0d4'
 app.secret_key = 'your-secret-key'
